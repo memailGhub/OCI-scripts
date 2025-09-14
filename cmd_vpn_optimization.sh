@@ -32,7 +32,7 @@ sysctl -w net.ipv4.ip_forward=1
 echo "Setting up firewall rules..."
 ufw allow 1194/udp     # OpenVPN (UDP 1194)
 ufw allow 22/tcp       # SSH (TCP 22)
-ufw enable             # Enable UFW
+ufw --force enable     # Enable UFW with no prompt
 
 # Disable IPv6 (if not used by your VPN)
 echo "Disabling IPv6..."
